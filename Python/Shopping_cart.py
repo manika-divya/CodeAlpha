@@ -4,7 +4,8 @@ cart = []
 def add_product():
     product = input('Enter product name: ')
     price = float(input('Enter product price: '))
-    cart.append([product,price])
+    quantity = int(input('Enter quantity: '))
+    cart.append([product,price,quantity])
     print('Product added successfully!\n')
 
 
@@ -16,8 +17,14 @@ def view_cart():
     total =0
     print('\n-----SHOPPING CART-----')
     for i ,item in enumerate (cart,start = 1):
-        print(f"{i}. {item[0]} -Rs{item[1]:.2f}")
-        total += item[1]
+        product = item[0]
+        price = item[1]
+        quantity = item[2]
+
+        item_total = price * quantity
+        
+        print(f"{i}. {product} -Rs{price:.2f} X {quantity} = Rs{item_total:.2f}")
+        total += item_total
     print(f"Total Bill: Rs{total:.2f}\n")
 
 #To allow the user to remove something from cart
