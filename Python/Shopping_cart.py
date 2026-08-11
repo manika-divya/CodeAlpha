@@ -4,7 +4,7 @@ cart = []
 def add_product():
     product = input('Enter product name: ')
     price = float(input('Enter product price: '))
-    quantity = int(input('Enter quantity: '))
+    quantity = int(input('Enter quantity'))
     cart.append([product,price,quantity])
     print('Product added successfully!\n')
 
